@@ -3,7 +3,7 @@
 # Install Clojure 1.5.1
 echo "================= Installing Clojure-1.5.1 ==================="
 wget -nv http://central.maven.org/maven2/org/clojure/clojure/1.5.1/clojure-1.5.1.jar
-mkdir $HOME/lib && mv clojure-1.5.1.jar $HOME/lib/
+mkdir -p $HOME/lib && mv clojure-1.5.1.jar $HOME/lib/
 cat >/usr/local/bin/clj <<EOF
 #!/bin/bash
 if [[ $# -eq 0 ]]; then
