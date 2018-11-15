@@ -1,12 +1,12 @@
 #!/bin/bash -e
 
-apt-get clean
+yum clean
 mv /var/lib/apt/lists/* /tmp
 mkdir -p /var/lib/apt/lists/partial
-apt-get clean
-apt-get update
+yum clean
+yum update
 dpkg --purge --force-depends ca-certificates-java
-apt-get install ca-certificates-java
+yum install ca-certificates-java
 
 # install Clojure's build tool: leiningen
 echo "================= Install clojure's build tool: leiningen ==================="
@@ -14,9 +14,9 @@ wget -nv https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 mv lein /usr/local/bin/lein
 chmod a+x /usr/local/bin/lein
 
-sudo apt-get install rlwrap
+sudo yum install rlwrap
 
-for file in /u16cloall/version/*;
+for file in /c7cloall/version/*;
 do
   $file
 done
